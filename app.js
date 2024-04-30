@@ -64,8 +64,8 @@ const sessionOptions={
 
 
 
-app.get("/",(req,res)=>{
-    res.send("I am root");
+app.get("/",async(req,res)=>{
+    res.send("Please go to https://wanderlust-travel-sr5r.onrender.com/listings\n Or switch to route /listings");
 })
 
 app.use(session(sessionOptions));
