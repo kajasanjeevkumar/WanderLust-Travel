@@ -1,7 +1,7 @@
 <%- layout("/layouts/boilerplate") %>
 <div class="row mt-3">
     <div class="col-8 offset-3" >
-        <h3><%= listing.title %></h3>
+        <h2><b><%= listing.title %></b></h2>
     </div>
     <div class="card col-6 offset-3 show-card listing-card">
         <div class="card listing-card" >
@@ -66,7 +66,10 @@
     </form>
     <hr>
     <% } %>
-    <h4>All Reviews</h4>
+    <% if(!currUser){%>
+        <h3><b>LOGIN TO CREATE YOUR REVIEW</b></h3>
+    <%} %>
+    <h4><u>All Reviews</u></h4>
     <div class="row">
     <% for(review of listing.reviews){ %>
         <div class="card col-5 ms-3 mb-3">
