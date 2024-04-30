@@ -23,7 +23,7 @@
           </div>
     </div>
 </div>
-<% if(currUser && currUser._id.equals(listing.owner._id)||(currUser._id=="662ff8ee4ed01eb5a5a69658")){ %>
+<% if(currUser && (currUser._id.equals(listing.owner._id)||(currUser._id=="662ff8ee4ed01eb5a5a69658"))){ %>
     <div class="btns">
         <a href="/listings/<%= listing._id %>/edit" class="btn btn-dark col-1 offset-3 edit-btn">Edit</a>
         <form method="POST"action="/listings/<%= listing._id %>?_method=DELETE">
