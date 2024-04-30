@@ -1,0 +1,147 @@
+<%- layout("/layouts/boilerplate") %>
+<style>
+  #filters{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .filter
+  {
+    text-align: center;
+    margin-right: 1.9rem;
+    margin-top: 0.5rem;
+    opacity: 0.85;
+  }
+  .filter:hover{
+    opacity: 1;
+    cursor: pointer;
+  }
+  .filter p{
+    font-size:0.9rem;
+  }
+  #filters a{
+    text-decoration: none;
+    color: #2b09e8;
+  }
+</style>
+<body>
+    <div id="filters">
+      <div id="filters">
+        <div class="filter">
+            <a href="/select/Trending">
+                <i class="fa-solid fa-fire"></i>
+                <p>Trending</p>
+            </a>
+        </div>
+        <div class="filter">
+            <a href="/select/Rooms">
+                <i class="fa-solid fa-bed"></i>
+                <p>Rooms</p>
+            </a>
+        </div>
+        <div class="filter">
+            <a href="/select/Iconic">
+                <i class="fa-solid fa-mountain-city"></i>
+                <p>Iconic City</p>
+            </a>
+        </div>
+        <div class="filter">
+            <a href="/select/Mountains">
+                <i class="fa-solid fa-mountain"></i>
+                <p>Mountains</p>
+            </a>
+        </div>
+        <div class="filter">
+            <a href="/select/Museum">
+                <i class="fa-solid fa-building-columns"></i>
+                <p>Museum</p>
+            </a>
+        </div>
+        
+       
+        <div class="filter">
+            <a href="/select/Camping">
+                <i class="fa-solid fa-campground"></i>
+                <p>Camping</p>
+            </a>
+        </div>
+        <div class="filter">
+            <a href="/select/Farms">
+                <i class="fa-solid fa-cow"></i>
+                <p>Farms</p>
+            </a>
+        </div>
+     
+        <div class="filter">
+            <a href="/select/Domes">
+                <i class="fa-solid fa-igloo"></i>
+                <p>Domes</p>
+            </a>
+        </div>
+        <div class="filter">
+            <a href="/select/Castles">
+                <i class="fa-brands fa-fort-awesome"></i>
+                <p>Castles</p>
+            </a>
+        </div>
+        <div class="filter">
+            <a href="/select/Boats">
+                <i class="fa-solid fa-ship"></i>
+                <p>Boats</p>
+            </a>
+        </div>
+        <div class="filter">
+            <a href="/select/Pools">
+                <i class="fa-solid fa-person-swimming"></i>
+                <p>Pools</p>
+            </a>
+        </div>
+        <div class="filter">
+            <a href="/select/Diving">
+                <i class="fa-solid fa-parachute-box"></i>
+                <p>Diving</p>
+            </a>
+        </div>
+       
+       
+        <div class="filter">
+            <a href="/select/Forest">
+                <i class="fa-solid fa-tree"></i>
+                <p>Forest</p>
+            </a>
+        </div>
+        <div class="filter">
+            <a href="/select/Arctic">
+                <i class="fa-solid fa-snowflake"></i>
+                <p>Arctic</p>
+            </a>
+        </div>
+    </div>
+
+    
+
+    </div>
+    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-3">
+        <%for(let listing of allListings){%>
+            <a href="/listings/<%= listing._id %>" class="listing-link">
+                <div class="card col listing-card" >
+                    <img src="<%= listing.image.url %>" class="card-img-top" alt="listing_image" style="height: 20rem;">
+                    
+                        <div class="card-img-overlay">
+                          <h5 class="card-title"><%= listing.country %></h5>
+                          
+                        </div>
+                     
+                    <div class="card-body">
+                      <p class="card-text">
+                        <b><%=listing.title%></b><br>
+                        &#8377;<%= listing.price.toLocaleString("en-IN") %> / night<br>           
+                      </p>
+                    </div>
+                  </div>
+            </a>
+        <%}%>
+    </div>
+    
+</body>
+
+
